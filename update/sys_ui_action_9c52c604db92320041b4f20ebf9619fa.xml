@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>Update an Incident</action_name>
+        <active>true</active>
+        <client>false</client>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <hint>Update the last incident record created in Incident Table</hint>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <name>Update an Incident</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeUIAction(current, previous) {
+	gs.addInfoMessage('Started querying the Marketing Events Table');
+var lastrec = new GlideRecord('x_37605_marketing_marketing_event');
+	
+	lastrec.addQuery('name','Sydney LUG');
+	lastrec.query();
+	
+	while(lastrec.next()){
+		gs.addInfoMessage(lastrec.sys_id);
+		lastrec.sponsor = 'London partner';
+		gs.addInfoMessage('Marketing events with Sydney are updated to London ');
+		lastrec.update();
+	}
+gs.addInfoMessage('All Marketing Events with Sydeny city are updated to London' + lastrec.sys_id);
+}(current, typeof previous != 'undefined' ?  previous : null));]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-18 12:05:22</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9c52c604db92320041b4f20ebf9619fa</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Update an Incident</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketing Events Application" source="x_37605_marketing">175cf6d2db02320041b4f20ebf9619c8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Marketing Events Application">175cf6d2db02320041b4f20ebf9619c8</sys_scope>
+        <sys_update_name>sys_ui_action_9c52c604db92320041b4f20ebf9619fa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-18 12:24:53</sys_updated_on>
+        <table>x_37605_marketing_attendee</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

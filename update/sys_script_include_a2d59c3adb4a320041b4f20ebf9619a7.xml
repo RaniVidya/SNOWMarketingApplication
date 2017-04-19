@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_37605_marketing.totalCost</api_name>
+        <client_callable>false</client_callable>
+        <description>Generate the total cost of a marketing event based on the equipment requests associated with it. Compare the total cost to the event budget.</description>
+        <name>totalCost</name>
+        <script><![CDATA[var totalCost = Class.create();
+totalCost.prototype = {
+    initialize: function(mrkevent) {
+		this.mrkevent = mrkevent;
+    },
+getCost: function(){
+	var cost = 0;
+	//Get total cost for all equipment request in the marketing event
+	var equipment = new GlideRecord('x_37605_marketing_equipment_request');
+	equipment.addQuery('marketing_event', this.mrkevent);
+	equipment.query();
+	while(equipment.next()){
+		  cost = cost + parseFloat(equipment.cost.getCurrencyValue());
+		  }
+	return cost;
+},
+    type: 'totalCost'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-14 06:54:19</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a2d59c3adb4a320041b4f20ebf9619a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>totalCost</sys_name>
+        <sys_package display_value="Marketing Events Application" source="x_37605_marketing">175cf6d2db02320041b4f20ebf9619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Marketing Events Application">175cf6d2db02320041b4f20ebf9619c8</sys_scope>
+        <sys_update_name>sys_script_include_a2d59c3adb4a320041b4f20ebf9619a7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-14 06:54:19</sys_updated_on>
+    </sys_script_include>
+</record_update>
