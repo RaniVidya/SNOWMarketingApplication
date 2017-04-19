@@ -6,7 +6,7 @@
         <sys_class_name>sc_cat_item_category</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-13 11:59:17</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>f6b314aedb82320041b4f20ebf9619bd</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Can We Help You?.Request Marketing Events</sys_name>

@@ -28,7 +28,7 @@ getCost: function(){
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-14 06:54:19</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>a2d59c3adb4a320041b4f20ebf9619a7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>totalCost</sys_name>
